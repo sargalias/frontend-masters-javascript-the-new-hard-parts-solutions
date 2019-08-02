@@ -152,16 +152,25 @@ Words.prototype[Symbol.iterator] = function () {
 const helloWorld = new Words('Hello World');
 for (const word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
 
+
 // CHALLENGE 7
 
 function valueAndPrevIndex(array) {
-
+  let i = 0;
+  return {
+    sentence() {
+      const suffix = i === 0 ? 'first' : `was found after index ${i - 1}`;
+      const element = array[i];
+      i++;
+      return `${element} ${suffix}`;
+    }
+  }
 }
 
 const returnedSentence = valueAndPrevIndex([4, 5, 6])
-// console.log(returnedSentence.sentence());
-// console.log(returnedSentence.sentence());
-// console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
 
 
 //CHALLENGE 8
