@@ -10,11 +10,12 @@ sayHello(); // should log "Hello" after 1000ms
 
 // Challenge 2
 var promise = new Promise(function (resolve, reject) {
-  // ADD CODE HERE
+  setTimeout(() => resolve('Resolved'), 1000);
 });
 
 // Should print out "Resolved!"
 // ADD CODE HERE
+promise.then(console.log);
 
 
 // Challenge 3
