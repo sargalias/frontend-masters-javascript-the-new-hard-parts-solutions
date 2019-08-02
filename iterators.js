@@ -176,11 +176,27 @@ console.log(returnedSentence.sentence());
 //CHALLENGE 8
 
 function* createConversation(string) {
-
-
+  const data = yield new Promise(resolve => {
+    setTimeout(() => {
+      resolve(string === 'english' ? 'hello there' : 'gibberish')
+    }, 3000);
+  });
+  console.log(data);
+  challenge8();
 }
 
-console.log(createConversation('english').next());
+function step(value) {
+  it.next(value);
+}
+
+function challenge8() {
+  it = createConversation('english');
+  const futureData = it.next();
+  futureData.value.then(step);
+}
+
+let it;
+challenge8();
 
 
 
