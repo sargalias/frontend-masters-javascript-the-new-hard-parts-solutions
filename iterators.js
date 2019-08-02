@@ -104,15 +104,22 @@ console.log(iterateSet.next()); // -> should log 'y'
 
 function indexIterator(arr) {
   // YOUR CODE HERE
-
+  let i = 0;
+  return {
+    next() {
+      const result = [i, arr[i]];
+      i++;
+      return result;
+    }
+  }
 }
 
 // Uncomment the lines below to test your work
-// const array5 = ['a', 'b', 'c', 'd'];
-// const iteratorWithIndex = indexIterator(array5);
-// console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
-// console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
-// console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
+const array5 = ['a', 'b', 'c', 'd'];
+const iteratorWithIndex = indexIterator(array5);
+console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
 
 
 
