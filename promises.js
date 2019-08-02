@@ -42,12 +42,12 @@ console.log("I'm not the promise!");
 
 // Challenge 5
 function delay() {
-
+  return new Promise(resolve => setTimeout(resolve, 1000));
 }
 
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
-// delay().then(sayHello);
+delay().then(sayHello);
 
 
 // Challenge 6
