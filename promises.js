@@ -21,11 +21,12 @@ promise.then(console.log);
 // Challenge 3
 
 promise = new Promise(function (resolve, reject) {
-  // ADD CODE HERE
+  reject('Rejected');
 })
 
 // Should print out "Reject!"
 // ADD CODE HERE
+promise.catch(console.log);
 
 
 // Challenge 4
