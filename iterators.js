@@ -5,25 +5,35 @@ console.log('Hello, world!');
 
 function sumFunc(arr) {
   // YOUR CODE HERE
-
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }
 
 // Uncomment the lines below to test your work
-// const array = [1, 2, 3, 4];
-// console.log(sumFunc(array)); // -> should log 10
+const array = [1, 2, 3, 4];
+console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
   // YOUR CODE HERE
-
+  let i = 0;
+  function iterator() {
+    const element = arr[i];
+    i++;
+    return element;
+  }
+  return iterator;
 }
 
 // Uncomment the lines below to test your work
-// const array2 = ['a', 'b', 'c', 'd'];
-// const myIterator = returnIterator(array2);
-// console.log(myIterator()); // -> should log 'a'
-// console.log(myIterator()); // -> should log 'b'
-// console.log(myIterator()); // -> should log 'c'
-// console.log(myIterator()); // -> should log 'd'
+const array2 = ['a', 'b', 'c', 'd'];
+const myIterator = returnIterator(array2);
+console.log(myIterator()); // -> should log 'a'
+console.log(myIterator()); // -> should log 'b'
+console.log(myIterator()); // -> should log 'c'
+console.log(myIterator()); // -> should log 'd'
 
 
 
