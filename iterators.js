@@ -202,11 +202,14 @@ challenge8();
 
 //CHALLENGE 9
 function waitForVerb(noun) {
-
+  return new Promise(resolve => {
+    setTimeout(() => resolve(`${noun} runs`), 3000);
+  });
 }
 
 async function f(noun) {
-
+  const sentence = await waitForVerb(noun);
+  console.log(sentence);
 }
 
 f("dog");
