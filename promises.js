@@ -53,8 +53,9 @@ delay().then(sayHello);
 // Challenge 6
 //
 // ADD CODE BELOW
-// var secondPromise =
-// var firstPromise =
+const secondPromise = Promise.resolve('Second!');
+const firstPromise = secondPromise;
+firstPromise.then(console.log);
 
 
 // Challenge 7
